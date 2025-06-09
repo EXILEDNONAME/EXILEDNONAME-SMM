@@ -26,3 +26,23 @@ Route::get('/dashboard/settings', function () { return redirect('/dashboard')->w
 Route::get('/dashboard/administratives', function () { return redirect('/dashboard')->with('error', __('default.notification.error.url-notfound')); });
 Route::get('/dashboard/administratives/applications', function () { return redirect('/dashboard')->with('error', __('default.notification.error.url-notfound')); });
 Route::get('/dashboard/administratives/managements', function () { return redirect('/dashboard')->with('error', __('default.notification.error.url-notfound')); });
+
+// PRODUCTS
+Route::group([
+  'as' => 'dashboard.main.products.',
+  'prefix' => 'dashboard/products',
+  'namespace' => 'App\Http\Controllers\Backend\__Main',
+  'middleware' => ['auth', 'web']
+], function () {
+  Route::get('/', 'ProductController@index')->name('index');
+});
+
+// TRANSACTIONS
+Route::group([
+  'as' => 'dashboard.main.transactions.',
+  'prefix' => 'dashboard/transactions',
+  'namespace' => 'App\Http\Controllers\Backend\__Main',
+  'middleware' => ['auth', 'web']
+], function () {
+  Route::get('/', 'TransactionController@index')->name('index');
+});
