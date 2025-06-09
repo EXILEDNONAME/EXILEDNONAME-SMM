@@ -1,0 +1,7 @@
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> %2$s </label>
+  <div class="col-lg-9">
+    %3$s    @error('%1$s') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+ 

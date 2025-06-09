@@ -1,0 +1,2 @@
+@extends('layouts.backend.__templates.edit', ['status' => 'false', 'daterange' => 'false'])
+@section('title', '%%crudNameTitle%%')

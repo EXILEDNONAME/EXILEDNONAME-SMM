@@ -1,0 +1,1 @@
+{{ Html::text('%%itemName%%', (isset($data->%%itemName%%) ? $data->%%itemName%% : ''))->class([ $errors->has('%%itemName%%') ? 'form-control is-invalid' : 'form-control'])%%required%% }}
