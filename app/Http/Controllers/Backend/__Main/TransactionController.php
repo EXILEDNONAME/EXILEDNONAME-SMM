@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\__Main;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\Backend\__System\Controllers\Datatable\DefaultController;
 use App\Http\Traits\Backend\__System\Controllers\Datatable\ExtensionController;
@@ -16,7 +17,7 @@ class TransactionController extends Controller implements HasMiddleware {
     $this->model = 'App\Models\Backend\__Main\Transaction';
     $this->path = 'pages.backend.__main.transaction.';
     $this->url = '/dashboard/transactions';
-    $this->data = $this->model::get();
+    $this->data = $this->model::where('id_user', Auth::user()->id)->get();
   }
 
   use DefaultController;

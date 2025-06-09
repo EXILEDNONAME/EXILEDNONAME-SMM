@@ -6,7 +6,7 @@
 
       @include('layouts.backend.__includes.sidebar-item')
 
-      @role('master-administrator')
+      @role('master-administratorx')
       <li class="menu-section">
         <h4 class="menu-text"> Applications </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
