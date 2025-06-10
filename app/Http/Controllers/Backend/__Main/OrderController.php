@@ -84,7 +84,7 @@ class OrderController extends Controller implements HasMiddleware {
       $getbalance = $this->balance::where('id', Auth::user()->id)->first();
     } else { $getbalance = 0; }
 
-    if ($getbalance->balance <= $request->get('price')){
+    if ($getbalance <= $request->get('price')){
       return redirect()->back()->with('error', 'Your Balance is Insufficient');
     }
     else {
