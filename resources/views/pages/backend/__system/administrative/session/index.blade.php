@@ -2,7 +2,7 @@
 @section('title', 'Sessions')
 
 @push('head')
-<link rel="stylesheet" type="text/css" href="/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" />
+<link rel="stylesheet" type="text/css" href="/public/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" />
 @endpush
 
 @section('content')

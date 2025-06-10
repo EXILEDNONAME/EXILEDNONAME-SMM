@@ -2,9 +2,9 @@
 @section('title', 'File Manager')
 
 @push('head')
-<link rel="stylesheet" type="text/css" href="/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/assets/backend/elfinder/css/elfinder.full.css">
-<link rel="stylesheet" type="text/css" href="/assets/backend/elfinder/css/theme.css">
+<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/css/elfinder.full.css">
+<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/css/theme.css">
 @endpush
 
 @section('content')
