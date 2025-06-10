@@ -1,7 +1,7 @@
-<script src="/assets/backend/plugins/global/plugins.bundle.js"></script>
-<script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="/assets/backend/js/scripts.bundle.js"></script>
-<script src="/assets/backend/js/pages/features/cards/tools.js?v=7.0.6"></script>
+<script src="/public/assets/backend/plugins/global/plugins.bundle.js"></script>
+<script src="/public/assets/backend/plugins/custom/prismjs/prismjs.bundle.js"></script>
+<script src="/public/assets/backend/js/scripts.bundle.js"></script>
+<script src="/public/assets/backend/js/pages/features/cards/tools.js?v=7.0.6"></script>
 @stack('js')
 
 <script>

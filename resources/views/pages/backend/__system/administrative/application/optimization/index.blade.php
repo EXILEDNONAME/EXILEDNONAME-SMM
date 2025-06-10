@@ -56,10 +56,10 @@
 @endsection
 
 @push('js')
-<script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js?v=7.0.6"></script>
-<script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.6"></script>
-<script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
-<script src="/assets/backend/js/pages/features/cards/tools.js?v=7.0.6"></script>
+<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js?v=7.0.6"></script>
+<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.6"></script>
+<script src="/public/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
+<script src="/public/assets/backend/js/pages/features/cards/tools.js?v=7.0.6"></script>
 
 <script>
 $(document).ready(function() {

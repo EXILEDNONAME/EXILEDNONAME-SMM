@@ -35,7 +35,7 @@ class SessionController extends Controller implements HasMiddleware {
       ->editColumn('avatar', function ($order) {
         if (!empty($order->user_id)) {
           $data = \App\Models\User::where('id', $order->user_id)->first();
-          if (!empty($data)) { return '<div class="symbol symbol-lg-35 symbol-30 symbol-circle symbol-light-success" bis_skin_checked="1"><img src="/assets/backend/media/users/blank.png"></div>'; }
+          if (!empty($data)) { return '<div class="symbol symbol-lg-35 symbol-30 symbol-circle symbol-light-success" bis_skin_checked="1"><img src="/public/assets/backend/media/users/blank.png"></div>'; }
           else { return $data->avatar; }
         }
       })

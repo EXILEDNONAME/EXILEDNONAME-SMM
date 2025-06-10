@@ -112,5 +112,5 @@
 @endsection
 
 @push('js')
-<script src="/assets/backend/js/pages/custom/profile/profile.js?v=7.0.6"></script>
+<script src="/public/assets/backend/js/pages/custom/profile/profile.js?v=7.0.6"></script>
 @endpush

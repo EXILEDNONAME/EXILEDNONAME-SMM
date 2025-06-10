@@ -10,13 +10,13 @@
     <ul class="navi navi-hover py-4">
       <li class="navi-item">
         <a href="{{ route('language', 'en') }}" class="navi-link {{ app()->getLocale() == 'en' ? 'active' : '' }}">
-          <span class="symbol symbol-20 mr-3"><img src="/assets/backend/media/svg/flags/226-united-states.svg" alt=""/></span>
+          <span class="symbol symbol-20 mr-3"><img src="/public/assets/backend/media/svg/flags/226-united-states.svg" alt=""/></span>
           <span class="navi-text">English</span>
         </a>
       </li>
       <li class="navi-item active">
         <a href="{{ route('language', 'id') }}" class="navi-link {{ app()->getLocale() == 'id' ? 'active' : '' }}">
-          <span class="symbol symbol-20 mr-3"><img src="/assets/backend/media/svg/flags/004-indonesia.svg" alt=""/></span>
+          <span class="symbol symbol-20 mr-3"><img src="/public/assets/backend/media/svg/flags/004-indonesia.svg" alt=""/></span>
           <span class="navi-text"> Bahasa </span>
         </a>
       </li>

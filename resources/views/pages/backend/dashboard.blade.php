@@ -30,7 +30,7 @@
             <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span> <span id="amOrpm"></span>
           </span>
         </div>
-        <img src="/assets/backend/media/svg/avatars/029-boy-11.svg" alt="" class="align-self-end h-100px">
+        <img src="/public/assets/backend/media/svg/avatars/029-boy-11.svg" alt="" class="align-self-end h-100px">
       </div>
     </div>
   </div>

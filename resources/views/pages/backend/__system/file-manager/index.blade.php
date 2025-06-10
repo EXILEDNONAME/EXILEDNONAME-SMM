@@ -12,9 +12,9 @@
 @endsection
 
 @push('js')
-<script src="/assets/backend/elfinder/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script src="/assets/backend/elfinder/js/elfinder.full.js"></script>
+<script src="/public/assets/backend/elfinder/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/public/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="/public/assets/backend/elfinder/js/elfinder.full.js"></script>
 <script type="text/javascript" charset="utf-8">
 $().ready(function() {
   $('#elfinder').elfinder({

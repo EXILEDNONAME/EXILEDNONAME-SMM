@@ -45,9 +45,9 @@
     <!--end::Global Config-->
 
     <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="/assets/backend/plugins/global/plugins.bundle.js?v=7.0.6"></script>
-    <script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
-    <script src="/assets/backend/js/scripts.bundle.js?v=7.0.6"></script>
+    <script src="/public/assets/backend/plugins/global/plugins.bundle.js?v=7.0.6"></script>
+    <script src="/public/assets/backend/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+    <script src="/public/assets/backend/js/scripts.bundle.js?v=7.0.6"></script>
     <!--end::Global Theme Bundle-->
 
 
