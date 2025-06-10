@@ -89,7 +89,7 @@ class OrderController extends Controller implements HasMiddleware {
     }
     else {
       Wallet::where('id_user', Auth::user()->id)->update([
-        'balance' => $getbalance->balance - $request->get('price'),
+        'balance' => $getbalance - $request->get('price'),
       ]);
 
       if($request->id_product == 1) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
