@@ -10,7 +10,7 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 
 class ProductController extends Controller implements HasMiddleware {
 
-  public static function middleware(): array { return ['auth', 'role:master-administrator']; }
+  public static function middleware(): array { return ['auth']; }
 
   function __construct() {
     $this->model = 'App\Models\Backend\__Main\Product';

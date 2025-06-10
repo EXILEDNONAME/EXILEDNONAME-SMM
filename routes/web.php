@@ -27,6 +27,18 @@ Route::get('/dashboard/administratives', function () { return redirect('/dashboa
 Route::get('/dashboard/administratives/applications', function () { return redirect('/dashboard')->with('error', __('default.notification.error.url-notfound')); });
 Route::get('/dashboard/administratives/managements', function () { return redirect('/dashboard')->with('error', __('default.notification.error.url-notfound')); });
 
+// ORDERS
+Route::group([
+  'as' => 'dashboard.main.orders.',
+  'prefix' => 'dashboard/orders',
+  'namespace' => 'App\Http\Controllers\Backend\__Main',
+  'middleware' => ['auth', 'web']
+], function () {
+  Route::get('/', 'OrderController@index')->name('index');
+  Route::get('/{id}', 'OrderController@show')->name('show');
+  Route::post('/', 'OrderController@store')->name('store');
+});
+
 // PRODUCTS
 Route::group([
   'as' => 'dashboard.main.products.',

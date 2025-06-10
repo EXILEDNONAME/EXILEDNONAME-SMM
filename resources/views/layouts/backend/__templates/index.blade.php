@@ -5,6 +5,8 @@
 @endpush
 
 @section('content')
+@stack('box')
+
 <div class="row">
   <div class="col-lg-12">
     <div class="card card-custom gutter-b" data-card="true" id="exilednoname_card">

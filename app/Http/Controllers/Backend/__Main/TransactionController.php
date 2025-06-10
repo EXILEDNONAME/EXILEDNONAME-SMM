@@ -11,7 +11,7 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 
 class TransactionController extends Controller implements HasMiddleware {
 
-  public static function middleware(): array { return ['auth', 'role:master-administrator']; }
+  public static function middleware(): array { return ['auth']; }
 
   function __construct() {
     $this->model = 'App\Models\Backend\__Main\Transaction';
@@ -30,6 +30,14 @@ class TransactionController extends Controller implements HasMiddleware {
   **/
 
   public function index() {
+    $now = \Carbon\Carbon::now()->timestamp;
+    $item = $this->model::get();
+    foreach($item as $item) {
+      if ($now - strtotime($item->created_at) > 300) { $this->model::where('id', $item->id)->update(['status' => 3]); }
+      else if ($now - strtotime($item->created_at) > 60) { $this->model::where('id', $item->id)->update(['status' => 2]); }
+      else { $this->model::where('id', $item->id)->update(['status' => 1]); }
+    }
+
     $model = $this->model;
     if (request()->ajax()) {
       return DataTables::of($this->data)
@@ -42,7 +50,7 @@ class TransactionController extends Controller implements HasMiddleware {
         if ($order->status == 1) { return '<span class="label label-warning label-inline"> Pending </span>'; }
         else if ($order->status == 2) { return '<span class="label label-info label-inline"> In Progress </span>'; }
         else if ($order->status == 3) { return '<span class="label label-success label-inline"> Completed </span>'; }
-        else if ($order->status == 4) { return '<span class="label label-success label-inline"> Canceled </span>'; }
+        else if ($order->status == 4) { return '<span class="label label-danger label-inline"> Canceled </span>'; }
         else { return ''; }
       })
       ->editColumn('target', function ($order) { return '<a href="' . $order->target . '" target="_blank"><i class="text-primary icon-md fas fa-link"></i></a>'; })
@@ -51,31 +59,7 @@ class TransactionController extends Controller implements HasMiddleware {
       ->addIndexColumn()->make(true);
     }
     return view($this->path . 'index', compact('model'));
-  }
 
-  /**
-  **************************************************
-  * @return STORE
-  **************************************************
-  **/
-
-  public function store(StoreRequest $request) {
-    $store = $request->all();
-    $this->model::create($store);
-    return redirect($this->url)->with('success', __('default.notification.success.item-created'));
-  }
-
-  /**
-  **************************************************
-  * @return UPDATE
-  **************************************************
-  **/
-
-  public function update(UpdateRequest $request, $id) {
-    $data = $this->model::findOrFail($id);
-    $update = $request->all();
-    $data->update($update);
-    return redirect($this->url)->with('success', __('default.notification.success.item-updated'));
   }
 
 }

@@ -1,2 +1,3 @@
 # TO DO
-- Create Modal Process Alert
+- Position Wallet on Navigation
+- Setting Calculate Balance

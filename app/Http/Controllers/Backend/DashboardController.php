@@ -9,16 +9,27 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Models\Backend\__Main\Transaction;
 
 class DashboardController extends Controller implements HasMiddleware {
 
   public static function middleware(): array { return ['auth']; }
 
+  function __construct() {
+    $this->model = 'App\Models\Backend\__Main\Transaction';
+  }
+
   public function index() {
-    // Storage::disk('public')->put('list.csv', file_get_contents('https://micypedia.id/api/v2?key=a4c5969039e713a8780270b0b25bb66e&action=services'));
-    $json = Storage::json(base_path('/storage/app/public/list.json'));
-    $data = json_decode($json);
-    return view('pages.backend.dashboard', compact('data'));
+    $now = \Carbon\Carbon::now()->timestamp;
+    $item = $this->model::get();
+    foreach($item as $item) {
+      if ($now - strtotime($item->created_at) > 300) { $this->model::where('id', $item->id)->update(['status' => 3]); }
+      else if ($now - strtotime($item->created_at) > 60) { $this->model::where('id', $item->id)->update(['status' => 2]); }
+      else { $this->model::where('id', $item->id)->update(['status' => 1]); }
+    }
+
+    $model = Transaction::take(5)->where('id_user', Auth::user()->id)->orderby('created_at', 'desc')->get();
+    return view('pages.backend.dashboard', compact('model'));
   }
 
   public function file_manager() {
