@@ -15,14 +15,14 @@
   <meta name="description" content="Created By EXILEDNONAME - Page Login"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
-  <link href="/public/assets/backend/css/pages/login/classic/login-5.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/css/themes/layout/header/base/light.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/css/themes/layout/header/menu/light.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/css/themes/layout/brand/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link href="/public/assets/backend/css/themes/layout/aside/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/pages/login/classic/login-5.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/themes/layout/header/base/light.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/themes/layout/header/menu/light.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/themes/layout/brand/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+  <link href="/assets/backend/css/themes/layout/aside/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
   <link rel="shortcut icon" href="/assets/favicon.png"/>
 </head>
 
@@ -30,7 +30,7 @@
 
   <div class="d-flex flex-column flex-root">
     <div class="login login-5 login-signin-on d-flex flex-row-fluid" id="kt_login">
-      <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url(/public/assets/backend/media/bg/bg-2.jpg);">
+      <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url(/assets/backend/media/bg/bg-2.jpg);">
         <div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 
           <div class="login-signin text-white">
@@ -99,9 +99,9 @@
   var KTAppSettings = { "font-family": "Poppins" };
   </script>
 
-  <script src="/public/assets/backend/plugins/global/plugins.bundle.js?v=7.0.6"></script>
-  <script src="/public/assets/backend/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
-  <script src="/public/assets/backend/js/scripts.bundle.js?v=7.0.6"></script>
+  <script src="/assets/backend/plugins/global/plugins.bundle.js?v=7.0.6"></script>
+  <script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+  <script src="/assets/backend/js/scripts.bundle.js?v=7.0.6"></script>
   <script>
     $("#alert_facebook").click(function (e) {
       Swal.fire({
