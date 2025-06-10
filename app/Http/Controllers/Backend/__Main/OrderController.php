@@ -79,9 +79,9 @@ class OrderController extends Controller implements HasMiddleware {
   **/
 
   public function store(Request $request) {
-
     if(!empty($this->balance::where('id_user', Auth::user()->id)->first())) {
-      $getbalance = $this->balance::where('id_user', Auth::user()->id)->first();
+      $set = $this->balance::where('id_user', Auth::user()->id)->first();
+      $getbalance = $set->balance;
     } else { $getbalance = 0; }
 
     if ($getbalance < $request->get('price')){
