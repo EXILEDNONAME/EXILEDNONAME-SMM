@@ -1,5 +1,5 @@
 @extends('layouts.backend.default')
-@section('title', 'Product 1')
+@section('title', 'Product 3')
 
 @section('content')
 <div class="row">
@@ -15,9 +15,7 @@
         ➥ https://vt.tiktok.com/xxx
         <hr>
         <b> Detail :</b> <br>
-        ➥ Proses Lambat <br>
-        ➥ Dilarang Spam Order (Account Banned) <br>
-        ➥ Gunakan Dengan Bijak <br>
+        ➥ - <br>
       </div>
     </div>
   </div>
@@ -44,7 +42,7 @@
         <form method="POST" id="exilednoname-form" action="{{ URL::current() }}/../" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input class="form-control" name="id_user" type="hidden" value="{{ Auth::User()->id }}">
-          <input class="form-control" name="id_product" type="hidden" value="1">
+          <input class="form-control" name="id_product" type="hidden" value="3">
 
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Link </label>
@@ -57,15 +55,16 @@
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Quantity </label>
             <div class="col-lg-9">
-              {{ Html::number('quantity', (isset($data->quantity) ? $data->quantity : '100'))->class([ $errors->has('quantity') ? 'form-control form-control-solid is-invalid' : 'form-control form-control-solid'])->id('quantity')->isReadOnly() }}
+              {{ Html::number('quantity', (isset($data->quantity) ? $data->quantity : ''))->class([ $errors->has('quantity') ? 'form-control is-invalid' : 'form-control'])->id('quantity') }}
               @error('quantity') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+              <span class="form-text text-muted"> Quantity 10 - 10.000 </span>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Price </label>
             <div class="col-lg-9">
-              {{ Html::text('price', (isset($data->price) ? $data->price : '0.00'))->class([ $errors->has('price') ? 'form-control form-control-solid is-invalid' : 'form-control form-control-solid'])->isReadOnly()->id('result') }}
+              {{ Html::text('price', (isset($data->price) ? $data->price : ''))->class([ $errors->has('price') ? 'form-control form-control-solid is-invalid' : 'form-control form-control-solid'])->required()->id('result') }}
               @error('price') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
             </div>
           </div>

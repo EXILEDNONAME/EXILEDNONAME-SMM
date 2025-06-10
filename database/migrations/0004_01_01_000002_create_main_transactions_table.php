@@ -11,6 +11,7 @@ return new class extends Migration {
       $table->increments('id');
       $table->integer('id_user')->unsigned();
       $table->integer('id_product')->unsigned();
+      $table->integer('id_order')->nullable();
       $table->string('target');
       $table->integer('quantity');
       $table->decimal('price', 11,2);

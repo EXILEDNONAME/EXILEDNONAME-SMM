@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 use App\Models\Backend\__Main\Product;
+use App\Models\Backend\__Main\Wallet;
 
 class OrderController extends Controller implements HasMiddleware {
 
@@ -19,6 +20,7 @@ class OrderController extends Controller implements HasMiddleware {
 
   function __construct() {
     $this->model = 'App\Models\Backend\__Main\Transaction';
+    $this->balance = 'App\Models\Backend\__Main\Wallet';
     $this->path = 'pages.backend.__main.order.';
     $this->url = '/dashboard/orders';
     $this->data = $this->model::get();
@@ -64,10 +66,10 @@ class OrderController extends Controller implements HasMiddleware {
 
   public function show($id) {
     $url = $this->url;
-    if ($id == 1) {
-      $product = Product::where('id', $id)->first();
-      return view($this->path . 'product.product-1', compact('product', 'url'));
-    }
+    $product = Product::where('id', $id)->first();
+    if ($id == 1) { return view($this->path . 'product.product-1', compact('product', 'url')); }
+    if ($id == 2) { return view($this->path . 'product.product-2', compact('product', 'url')); }
+    if ($id == 3) { return view($this->path . 'product.product-3', compact('product', 'url')); }
   }
 
   /**
@@ -77,20 +79,40 @@ class OrderController extends Controller implements HasMiddleware {
   **/
 
   public function store(Request $request) {
-    $request->validate(['quantity' => 'required|numeric|min:50|max:100']);
-    $store = $request->all();
-    $this->model::create($store);
 
-    $data = Product::where('id', $request->id_product)->first();
+    if(!empty($this->balance::where('id', Auth::user()->id)->first())) {
+      $getbalance = $this->balance::where('id', Auth::user()->id)->first();
+    } else { $getbalance = 0; }
 
-    // AUTOMATION
-    $api = env('API_SMM', '');
-    $service = $data->id_service;
-    $link = $request->target;
-    $url = "https://micypedia.id/api/v2?key=$api&action=add&service=$service&link=$link";
-    $automation = Http::get($url);
+    if ($getbalance->balance <= $request->get('price')){
+      return redirect()->back()->with('error', 'Your Balance is Insufficient');
+    }
+    else {
+      Wallet::where('id_user', Auth::user()->id)->update([
+        'balance' => $getbalance->balance - $request->get('price'),
+      ]);
 
-    return redirect($this->url)->with('success', __('default.notification.success.item-created'));
+      if($request->id_product == 1) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
+      if($request->id_product == 2) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
+      if($request->id_product == 3) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
+
+      // AUTOMATION
+      $data = Product::where('id', $request->id_product)->first();
+      $api = env('API_SMM', '');
+      $service = $data->id_service;
+      $link = $request->target;
+      $quantity = $request->quantity;
+      $url = "https://micypedia.id/api/v2?key=$api&action=add&service=$service&link=$link&quantity=$quantity";
+      $automation = Http::get($url);
+      $item = json_decode($automation);
+
+      $store = $request->all();
+      $store['id_order'] = $item->order;
+      $this->model::create($store);
+
+      return redirect($this->url)->with('success', __('default.notification.success.item-created'));
+    }
+
   }
 
 }

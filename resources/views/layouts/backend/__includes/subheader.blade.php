@@ -9,5 +9,18 @@
       <a href="{{ URL::Current() }}/trash" data-toggle="tooltip" data-original-title="{{ __('default.label.trash') }}" data-placement="bottom" class="btn btn-xs btn-icon btn-danger"><i class="fas fa-trash"></i></a>
       @endif
     </div>
+
+    <div class="d-flex align-items-center">
+      <a href="javascript:void(0);" class="btn btn-secondary btn-sm font-weight-bold font-size-base mr-1">
+        <i class="icon-md fas fa-wallet text-info"></i>
+        @if (!empty(\DB::table('main_wallets')->where('id_user', Auth::user()->id)->first()))
+        <?php $fullbalance =\DB::table('main_wallets')->where('id_user', Auth::user()->id)->first(); ?>
+        Rp {{ number_format($fullbalance->balance, 2, ",", "."); }}
+        @else
+          Rp {{ number_format(0, 2, ",", "."); }}
+        @endif
+      </a>
+    </div>
+
   </div>
 </div>

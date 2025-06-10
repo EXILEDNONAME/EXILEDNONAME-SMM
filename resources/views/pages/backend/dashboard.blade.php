@@ -43,7 +43,14 @@
       <div class="card-body">
         <center>
           <span class="font-weight-bold text-muted font-size-sm"><i class="icon-xl fas fa-wallet text-info"></i></span>
-          <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-2 d-block"> Rp 10.000,00 </span>
+          <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-2 d-block">
+            @if (!empty(\DB::table('main_wallets')->where('id_user', Auth::user()->id)->first()))
+            <?php $fullbalance =\DB::table('main_wallets')->where('id_user', Auth::user()->id)->first(); ?>
+            Rp {{ number_format($fullbalance->balance, 2, ",", "."); }}
+            @else
+            Rp {{ number_format(0, 2, ",", "."); }}
+            @endif
+          </span>
           <span class="font-weight-bold text-muted font-size-sm"> Total Balances </span>
         </center>
       </div>
@@ -111,34 +118,34 @@
 
 @push('js')
 <script type="text/javascript">
-function SettingCurrentTime() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
-  var amOrPm = hours < 12 ? "AM" : "PM";
-  hours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours;
-  hours = addZero(hours);
-  minutes = addZero(minutes);
-  seconds = addZero(seconds);
-  var currentDate = currentTime.getDate();
-  var currentMonth = ConvertMonth(currentTime.getMonth());
-  var currentYear = currentTime.getFullYear();
-  var fullDateDisplay = `${currentDate} ${currentMonth} ${currentYear}`;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
-  document.getElementById("amOrpm").innerText = amOrPm;
-  document.getElementById("fullyear").innerText = fullDateDisplay;
-  var timer = setTimeout(SettingCurrentTime, 1000);
-}
-function addZero(component) {
-  return component < 10 ? "0" + component : component;
-}
-function ConvertMonth(component) {
-  month_array = new Array('Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
-  return month_array[component];
-}
-SettingCurrentTime();
+  function SettingCurrentTime() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+    var amOrPm = hours < 12 ? "AM" : "PM";
+    hours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours;
+    hours = addZero(hours);
+    minutes = addZero(minutes);
+    seconds = addZero(seconds);
+    var currentDate = currentTime.getDate();
+    var currentMonth = ConvertMonth(currentTime.getMonth());
+    var currentYear = currentTime.getFullYear();
+    var fullDateDisplay = `${currentDate} ${currentMonth} ${currentYear}`;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+    document.getElementById("amOrpm").innerText = amOrPm;
+    document.getElementById("fullyear").innerText = fullDateDisplay;
+    var timer = setTimeout(SettingCurrentTime, 1000);
+  }
+  function addZero(component) {
+    return component < 10 ? "0" + component : component;
+  }
+  function ConvertMonth(component) {
+    month_array = new Array('Januari', 'Febuari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+    return month_array[component];
+  }
+  SettingCurrentTime();
 </script>
 @endpush

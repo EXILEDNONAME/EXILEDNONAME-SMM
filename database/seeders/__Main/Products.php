@@ -11,7 +11,7 @@ class Products extends Seeder {
   public function run() {
     $data = [
       [
-        'id_service'        => '7260',
+        'id_service'        => '6952',
         'name'              => 'FREE - Tiktok View',
         'price'             => '0',
         'created_at'        => Carbon::now(),
