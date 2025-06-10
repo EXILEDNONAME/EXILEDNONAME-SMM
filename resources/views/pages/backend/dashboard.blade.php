@@ -60,7 +60,7 @@
   </div>
 
   <div class="col-xl-3 col-sm-6">
-    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(/assets/backend/media/svg/shapes/abstract-2.svg)">
+    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(/public/assets/backend/media/svg/shapes/abstract-2.svg)">
       <div class="card-body">
         <center>
           <span class="font-weight-bold text-muted font-size-sm"><i class="icon-xl fas fa-exchange-alt text-danger"></i></span>

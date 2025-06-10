@@ -1,8 +1,8 @@
 <div class="dropdown">
   <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
     <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
-      @if ( app()->getLocale() == 'en' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/assets/backend/media/svg/flags/226-united-states.svg') }}" alt=""> @endif
-      @if ( app()->getLocale() == 'id' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/assets/backend/media/svg/flags/004-indonesia.svg') }}" alt=""> @endif
+      @if ( app()->getLocale() == 'en' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/public/assets/backend/media/svg/flags/226-united-states.svg') }}" alt=""> @endif
+      @if ( app()->getLocale() == 'id' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/public/assets/backend/media/svg/flags/004-indonesia.svg') }}" alt=""> @endif
     </div>
   </div>
 
