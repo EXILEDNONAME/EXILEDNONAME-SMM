@@ -28,11 +28,13 @@
       <li class="menu-item {{ (request()->is('dashboard/applications/sheets*')) ? 'menu-item-active' : '' }}"><a href="{{ url('/dashboard/applications/sheets') }}" class="menu-link"><i class="menu-icon fas fa-file-import"></i><span class="menu-text"> Sheets </span></a></li>
       @endrole
 
+      @role('master-administrator')
       <li class="menu-section">
         <h4 class="menu-text"> EXTENSIONS </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}"><a href="{{ url('/dashboard/file-manager') }}" class="menu-link"><i class="menu-icon fas fa-hdd"></i><span class="menu-text"> File Manager </span></a></li>
+      @endrole
 
       <li class="menu-section">
         <h4 class="menu-text"> SETTINGS </h4>
