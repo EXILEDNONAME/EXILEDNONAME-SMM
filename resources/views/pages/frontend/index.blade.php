@@ -11,14 +11,14 @@
     @php $title = DB::table('system_settings')->first(); @endphp
     {{ $title->application_name; }}
    </title>
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/animate.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/star-animation.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/star-animation.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/structure.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/main-style.css">
-  <link rel="stylesheet" type="text/css" href="{{ public_path() }}/assets/frontend/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/structure.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/main-style.css">
+  <link rel="stylesheet" type="text/css" href="/public/assets/frontend/css/responsive.css">
 </head>
 <body class="single-image star-animation">
   <div class="page-loader-wrapper">
@@ -26,7 +26,7 @@
   </div>
 
   <div id="main-wrapper">
-    <main id="main" class="background" data-image="{{ public_path() }}/assets/frontend/images/background.jpg">
+    <main id="main" class="background" data-image="/public/assets/frontend/images/background.jpg">
 
       <div class="bg-animation">
         <div id='stars'></div>
@@ -59,9 +59,9 @@
   </main>
 </div>
 
-<script src="{{ public_path() }}/assets/frontend/js/jquery-1.11.3.min.js"></script>
-<script src="{{ public_path() }}/assets/frontend/js/plugins.js"></script>
-<script src="{{ public_path() }}/assets/frontend/js/common.js"></script>
+<script src="/public/assets/frontend/js/jquery-1.11.3.min.js"></script>
+<script src="/public/assets/frontend/js/plugins.js"></script>
+<script src="/public/assets/frontend/js/common.js"></script>
 
 </body>
 </html>
