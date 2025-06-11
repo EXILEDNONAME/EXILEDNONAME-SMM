@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
         $wallet = Wallet::orderBy('id','desc')->first()->id + 1;
         Wallet::create([
             'id_user' => $wallet,
-            'balance' => 0,
+            'balance' => 50,
         ]);
 
         event(new Registered($user));
