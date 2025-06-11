@@ -119,7 +119,8 @@ class OrderController extends Controller implements HasMiddleware {
         CURLOPT_URL => 'https://api.fonnte.com/send', CURLOPT_RETURNTRANSFER => true, CURLOPT_ENCODING => '', CURLOPT_MAXREDIRS => 10, CURLOPT_TIMEOUT => 0, CURLOPT_FOLLOWLOCATION => true, CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
           'target' => env('APP_NUMBER', ''),
-          'message' => 'Order : <br> ' . Auth::user()->name . ' Order \n' . $data->name,  
+          'message' => 'Order :
+          Name : ' . Auth::user()->name . ' Product :' . $data->name,  
           'countryCode' => '62'),
         CURLOPT_HTTPHEADER => array('Authorization: ' . env('APP_API', '')),
       ));
