@@ -70,6 +70,7 @@ class OrderController extends Controller implements HasMiddleware {
     if ($id == 1) { return view($this->path . 'product.product-1', compact('product', 'url')); }
     if ($id == 2) { return view($this->path . 'product.product-2', compact('product', 'url')); }
     if ($id == 3) { return view($this->path . 'product.product-3', compact('product', 'url')); }
+    if ($id == 4) { return view($this->path . 'product.product-4', compact('product', 'url')); }
   }
 
   /**
@@ -95,6 +96,7 @@ class OrderController extends Controller implements HasMiddleware {
       if($request->id_product == 1) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
       if($request->id_product == 2) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
       if($request->id_product == 3) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
+      if($request->id_product == 4) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
 
       // AUTOMATION
       $data = Product::where('id', $request->id_product)->first();
