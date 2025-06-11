@@ -56,5 +56,6 @@ Route::group([
   'namespace' => 'App\Http\Controllers\Backend\__Main',
   'middleware' => ['auth', 'web']
 ], function () {
+  Route::get('/all', 'TransactionController@all')->name('all');
   Route::get('/', 'TransactionController@index')->name('index');
 });
