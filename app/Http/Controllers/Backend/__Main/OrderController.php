@@ -121,6 +121,8 @@ class OrderController extends Controller implements HasMiddleware {
           'target' => env('APP_NUMBER', ''),
           'message' => '## ORDER
 Name : ' . Auth::user()->name . '
+Price : ' . $request->price . '
+Phone : ' . Auth::user()->phone . '
 Product : ' . $data->name . '
 Quantity : ' . $request->quantity . '
 Link : ' . $request->target,
