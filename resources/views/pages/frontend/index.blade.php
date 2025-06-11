@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/frontend/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/frontend/css/font-awesome.css">
 <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/frontend/css/templatemo-softy-pinko.css">
+<link rel="shortcut icon" href="{{ env('APP_URL') }}/assets/frontend/logo.png"/>
 </head>
 <body>
 
@@ -49,7 +50,7 @@
         <div class="row">
           <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
             <h1>Dapatkan lebih banyak <strong>Followers</strong>,
-              <strong>Likes</likes>, dan <strong>Views</strong>
+              <strong>Likes</strong>, dan <strong>Views</strong>
               dengan harga terjangkau bersama kami
               <br>
               <a href="/register" class="main-button-slider"> DAFTAR SEKARANG </a>

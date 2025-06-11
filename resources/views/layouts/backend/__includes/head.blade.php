@@ -18,5 +18,5 @@
   <link href="{{ env('APP_URL') }}/assets/backend/css/themes/layout/header/menu/light.css?v=7.0.6" rel="stylesheet" type="text/css"/>
   <link href="{{ env('APP_URL') }}/assets/backend/css/themes/layout/brand/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
   <link href="{{ env('APP_URL') }}/assets/backend/css/themes/layout/aside/dark.css?v=7.0.6" rel="stylesheet" type="text/css"/>
-  <link rel="shortcut icon" href="/public/assets/favicon.png"/>
+  <link rel="shortcut icon" href="{{ env('APP_URL') }}/assets/favicon.png"/>
 </head>
