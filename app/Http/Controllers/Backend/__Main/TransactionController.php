@@ -84,6 +84,7 @@ class TransactionController extends Controller implements HasMiddleware {
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
       ->editColumn('id_product', function ($order) { return $order->id_products->name; })
+      ->editColumn('id_order', function ($order) { return $order->id_order; })
       ->editColumn('users', function ($order) { return $order->users->name; })
       ->editColumn('transaction_id', function ($order) { return '#' . implode('', str_split(sprintf('%05d',  $order->id), 3));; })
       ->editColumn('status', function ($order) {
