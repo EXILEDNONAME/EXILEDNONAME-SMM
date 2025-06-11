@@ -120,8 +120,11 @@ class OrderController extends Controller implements HasMiddleware {
         CURLOPT_POSTFIELDS => array(
           'target' => env('APP_NUMBER', ''),
           'message' => 'Order :
-          Name : ' . Auth::user()->name . ' Product :' . $data->name,  
-          'countryCode' => '62'),
+Name : ' . Auth::user()->name . '
+Product : ' . $data->name . '
+Quantity : ' . $request->quantity . '
+Link : ' . $request->target,
+'countryCode' => '62'),
         CURLOPT_HTTPHEADER => array('Authorization: ' . env('APP_API', '')),
       ));
       curl_exec($curl);
