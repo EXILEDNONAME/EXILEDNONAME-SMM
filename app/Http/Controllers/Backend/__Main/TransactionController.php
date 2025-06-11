@@ -17,7 +17,7 @@ class TransactionController extends Controller implements HasMiddleware {
     $this->model = 'App\Models\Backend\__Main\Transaction';
     $this->path = 'pages.backend.__main.transaction.';
     $this->url = '/dashboard/transactions';
-    $this->data = $this->model::where('id_user', Auth::user()->id)->get();
+    $this->data = $this->model::where('id_user', Auth::user()->id)->orderby('created_at', 'desc')->get();
   }
 
   use DefaultController;
@@ -79,7 +79,7 @@ class TransactionController extends Controller implements HasMiddleware {
 
     $model = $this->model;
     if (request()->ajax()) {
-      return DataTables::of($model::get())
+      return DataTables::of($model::orderby('created_at', 'desc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
