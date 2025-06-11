@@ -114,6 +114,14 @@ class OrderController extends Controller implements HasMiddleware {
       $store['id_order'] = $item->order;
       $this->model::create($store);
 
+      $curl = curl_init();
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.fonnte.com/send', CURLOPT_RETURNTRANSFER => true, CURLOPT_ENCODING => '', CURLOPT_MAXREDIRS => 10, CURLOPT_TIMEOUT => 0, CURLOPT_FOLLOWLOCATION => true, CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array('target' => env('APP_NUMBER', ''), 'message' => Auth::user()->name . ' Order ' . $data->name,  'countryCode' => '62'),
+        CURLOPT_HTTPHEADER => array('Authorization: <token>'),
+      ));
+      curl_exec($curl);
+
       return redirect($this->url)->with('success', __('default.notification.success.item-created'));
     }
 
