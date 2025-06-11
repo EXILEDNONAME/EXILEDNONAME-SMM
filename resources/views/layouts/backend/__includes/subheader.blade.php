@@ -21,7 +21,7 @@
         @endif
       </a>
       @role('master-administrator')
-      <a href="{{ URL::Current() }}/all" class="btn btn-secondary btn-sm font-weight-bold font-size-base"><i class="icon-md fas fa-server text-danger"></i></a>
+      <a href="/dashboard/transactions/all" class="btn btn-secondary btn-sm font-weight-bold font-size-base"><i class="icon-md fas fa-server text-danger"></i></a>
       @endrole
     </div>
 

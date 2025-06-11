@@ -2,7 +2,7 @@
 @section('title', 'Sessions')
 
 @push('head')
-<link rel="stylesheet" type="text/css" href="/public/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" />
+<link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" />
 @endpush
 
 @section('content')
@@ -59,9 +59,9 @@
 @endsection
 
 @push('js')
-<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js?v=7.0.6"></script>
-<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.6"></script>
-<script src="/public/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js?v=7.0.6"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.6"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
 
 <script>
 $(document).ready(function() {

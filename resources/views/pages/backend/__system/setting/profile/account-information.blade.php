@@ -39,7 +39,7 @@
                 @if(Auth::User()->avatar)
                 <div class="image-input-wrapper" style="background-image: url(/storage/avatar/{{ Auth::User()->id }}/{{ Auth::User()->avatar }})"></div>
                 @else
-                <div class="image-input-wrapper" style="background-image: url(/public/assets/backend/media/users/blank.png)"></div>
+                <div class="image-input-wrapper" style="background-image: url({{ env('APP_URL') }}/assets/backend/media/users/blank.png)"></div>
                 @endif
 
                 <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
@@ -112,5 +112,5 @@
 @endsection
 
 @push('js')
-<script src="/public/assets/backend/js/pages/custom/profile/profile.js?v=7.0.6"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/js/pages/custom/profile/profile.js?v=7.0.6"></script>
 @endpush

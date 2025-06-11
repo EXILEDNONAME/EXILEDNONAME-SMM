@@ -30,7 +30,7 @@
             <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span> <span id="amOrpm"></span>
           </span>
         </div>
-        <img src="/public/assets/backend/media/svg/avatars/029-boy-11.svg" alt="" class="align-self-end h-100px">
+        <img src="{{ env('APP_URL') }}/assets/backend/media/svg/avatars/029-boy-11.svg" alt="" class="align-self-end h-100px">
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
 
   <div class="col-xl-3 col-sm-6">
     <!--begin::Stats Widget 1-->
-    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(/public/assets/backend/media/svg/shapes/abstract-4.svg)">
+    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url({{ env('APP_URL') }}/assets/backend/media/svg/shapes/abstract-4.svg)">
       <!--begin::Body-->
       <div class="card-body">
         <center>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="col-xl-3 col-sm-6">
-    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(/public/assets/backend/media/svg/shapes/abstract-2.svg)">
+    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url({{ env('APP_URL') }}/assets/backend/media/svg/shapes/abstract-2.svg)">
       <div class="card-body">
         <center>
           <span class="font-weight-bold text-muted font-size-sm"><i class="icon-xl fas fa-exchange-alt text-danger"></i></span>

@@ -1,8 +1,8 @@
 <div class="dropdown">
   <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
     <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
-      @if ( app()->getLocale() == 'en' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/public/assets/backend/media/svg/flags/226-united-states.svg') }}" alt=""> @endif
-      @if ( app()->getLocale() == 'id' ) <img class="h-20px w-20px rounded-sm" src="{{ asset('/public/assets/backend/media/svg/flags/004-indonesia.svg') }}" alt=""> @endif
+      @if ( app()->getLocale() == 'en' ) <img class="h-20px w-20px rounded-sm" src="{{ env('APP_URL') }}/assets/backend/media/svg/flags/226-united-states.svg" alt=""> @endif
+      @if ( app()->getLocale() == 'id' ) <img class="h-20px w-20px rounded-sm" src="{{ env('APP_URL') }}/assets/backend/media/svg/flags/004-indonesia.svg" alt=""> @endif
     </div>
   </div>
 
@@ -10,13 +10,13 @@
     <ul class="navi navi-hover py-4">
       <li class="navi-item">
         <a href="{{ route('language', 'en') }}" class="navi-link {{ app()->getLocale() == 'en' ? 'active' : '' }}">
-          <span class="symbol symbol-20 mr-3"><img src="/public/assets/backend/media/svg/flags/226-united-states.svg" alt=""/></span>
+          <span class="symbol symbol-20 mr-3"><img src="{{ env('APP_URL') }}/assets/backend/media/svg/flags/226-united-states.svg" alt=""/></span>
           <span class="navi-text">English</span>
         </a>
       </li>
       <li class="navi-item active">
         <a href="{{ route('language', 'id') }}" class="navi-link {{ app()->getLocale() == 'id' ? 'active' : '' }}">
-          <span class="symbol symbol-20 mr-3"><img src="/public/assets/backend/media/svg/flags/004-indonesia.svg" alt=""/></span>
+          <span class="symbol symbol-20 mr-3"><img src="{{ env('APP_URL') }}/assets/backend/media/svg/flags/004-indonesia.svg" alt=""/></span>
           <span class="navi-text"> Bahasa </span>
         </a>
       </li>

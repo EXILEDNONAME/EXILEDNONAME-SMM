@@ -2,9 +2,9 @@
 @section('title', 'File Manager')
 
 @push('head')
-<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/css/elfinder.full.css">
-<link rel="stylesheet" type="text/css" href="/public/assets/backend/elfinder/css/theme.css">
+<link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/backend/elfinder/css/elfinder.full.css">
+<link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/backend/elfinder/css/theme.css">
 @endpush
 
 @section('content')
@@ -12,9 +12,9 @@
 @endsection
 
 @push('js')
-<script src="/public/assets/backend/elfinder/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="/public/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script src="/public/assets/backend/elfinder/js/elfinder.full.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/elfinder/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/elfinder/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/elfinder/js/elfinder.full.js"></script>
 <script type="text/javascript" charset="utf-8">
 $().ready(function() {
   $('#elfinder').elfinder({

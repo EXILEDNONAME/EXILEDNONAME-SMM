@@ -1,7 +1,7 @@
 @extends('layouts.backend.default')
 
 @push('head')
-<link href="/public/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
+<link href="{{ env('APP_URL') }}/assets/backend/plugins/custom/datatables/datatables.bundle.css?v=7.0.6" rel="stylesheet" type="text/css"/>
 @endpush
 
 @section('content')
@@ -282,9 +282,9 @@
 @endsection
 
 @push('js')
-<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js"></script>
-<script src="/public/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js"></script>
-<script src="/public/assets/backend/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js"></script>
+<script src="{{ env('APP_URL') }}/assets/backend/plugins/custom/datatables/datatables.bundle.js"></script>
 <script>
   $(document).ready(function() {
     $('#toast-container').fadeOut(5000);
