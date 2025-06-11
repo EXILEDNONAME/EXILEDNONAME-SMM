@@ -90,10 +90,6 @@ class OrderController extends Controller implements HasMiddleware {
       return redirect()->back()->with('error', 'Your Balance is Insufficient');
     }
     else {
-      Wallet::where('id_user', Auth::user()->id)->update([
-        'balance' => $getbalance - $request->get('price'),
-      ]);
-
       if($request->id_product == 1) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
       if($request->id_product == 2) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
       if($request->id_product == 3) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
@@ -130,6 +126,10 @@ Link : ' . $request->target,
         CURLOPT_HTTPHEADER => array('Authorization: ' . env('APP_API', '')),
       ));
       curl_exec($curl);
+
+      Wallet::where('id_user', Auth::user()->id)->update([
+        'balance' => $getbalance - $request->get('price'),
+      ]);
 
       return redirect($this->url)->with('success', __('default.notification.success.item-created'));
     }
