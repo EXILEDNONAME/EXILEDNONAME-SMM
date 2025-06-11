@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use App\Models\User;
 
 class Transaction extends Model {
 
@@ -26,7 +27,7 @@ class Transaction extends Model {
     return $this->belongsTo(Product::class, 'id_product');
   }
 
-  public function id_users(){
+  public function users(){
     return $this->belongsTo(User::class, 'id_user');
   }
 
