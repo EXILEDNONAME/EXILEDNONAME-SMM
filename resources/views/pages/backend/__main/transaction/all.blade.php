@@ -13,7 +13,7 @@
 
 @section('table-body')
 { data: 'status', 'className': 'align-middle text-nowrap', 'width': '1' },
-{ data: 'id_users', 'className': 'align-middle text-nowrap' },
+{ data: 'id_user', 'className': 'align-middle text-nowrap' },
 { data: 'transaction_id', 'className': 'align-middle text-nowrap text-right', 'width': '1' },
 { data: 'id_product', 'className': 'align-middle text-nowrap' },
 { data: 'quantity', orderable: false, 'className': 'align-middle text-nowrap text-center', 'width': '1' },
