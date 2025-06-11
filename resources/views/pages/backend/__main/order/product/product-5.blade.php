@@ -15,7 +15,7 @@
         ➥ https://www.tiktok.com/@username
         <hr>
         <b> Detail :</b> <br>
-        ➥ Proses Delay <br>
+        ➥ Proses Cepat <br>
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@
         <form method="POST" id="exilednoname-form" action="{{ URL::current() }}/../" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input class="form-control" name="id_user" type="hidden" value="{{ Auth::User()->id }}">
-          <input class="form-control" name="id_product" type="hidden" value="4">
+          <input class="form-control" name="id_product" type="hidden" value="5">
 
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Link </label>
