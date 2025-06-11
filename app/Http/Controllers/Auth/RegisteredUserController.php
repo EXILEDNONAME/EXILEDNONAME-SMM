@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+use App\Models\Backend\__Main\Wallet;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -43,6 +45,12 @@ class RegisteredUserController extends Controller
             'phone' => $request->phone,
             'username' => $request->username,
             'password' => Hash::make($request->password),
+        ]);
+
+        $wallet = Wallet::orderBy('id','desc')->first()->id + 1;
+        Wallet::create([
+            'id_user' => $wallet,
+            'balance' => 0,
         ]);
 
         event(new Registered($user));
