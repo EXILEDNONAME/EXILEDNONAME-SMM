@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
+use App\Http\Controllers\Backend\__Main\WalletTransactionController;
+
 Route::get('/', function () {
   return view('pages.frontend.index');
 });
@@ -59,3 +61,19 @@ Route::group([
   Route::get('/all', 'TransactionController@all')->name('all');
   Route::get('/', 'TransactionController@index')->name('index');
 });
+
+// WALLETS
+Route::group([
+  'as' => 'dashboard.main.wallets.',
+  'prefix' => 'dashboard/wallets',
+  'namespace' => 'App\Http\Controllers\Backend\__Main',
+  'middleware' => ['auth', 'web']
+], function () {
+  Route::get('/', 'WalletController@index')->name('index');
+  Route::post('/checkout', 'WalletController@checkout')->name('checkout');
+  
+});
+
+Route::get('/wallets', [WalletTransactionController::class, 'index']);
+Route::post('/checkout', [WalletTransactionController::class, 'checkout']);
+Route::post('/midtrans-callback', [WalletTransactionController::class, 'callback']);

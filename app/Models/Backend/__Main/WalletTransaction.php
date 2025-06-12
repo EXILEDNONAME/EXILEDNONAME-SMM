@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Models\User;
 
-class Wallet extends Model {
+class WalletTransaction extends Model {
 
   use HasFactory, LogsActivity, SoftDeletes;
 
-  protected $table = 'main_wallets';
+  protected $table = 'main_wallet_transactions';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
   protected static $logAttributes = ['*'];
@@ -21,10 +20,6 @@ class Wallet extends Model {
 
   public function getActivitylogOptions(): LogOptions {
     return LogOptions::defaults()->logOnly(['*']);
-  }
-
-  public function users(){
-    return $this->belongsTo(User::class, 'id_user');
   }
 
 }

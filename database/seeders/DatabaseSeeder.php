@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
 
     // MAIN
     $this->call(__Main\Products::class);
+    $this->call(__Main\Wallets::class);
   }
 }
