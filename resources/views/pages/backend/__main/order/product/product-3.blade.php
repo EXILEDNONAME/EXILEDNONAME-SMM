@@ -12,7 +12,8 @@
         <hr>
 
         <b>Contoh Link :</b> <br>
-        ➥ https://vt.tiktok.com/xxx
+        ➥ https://vt.tiktok.com/xxx <br>
+        ➥ Pastikan akun tidak private
         <hr>
         <b> Detail :</b> <br>
         ➥ - <br>

@@ -12,7 +12,8 @@
         <hr>
 
         <b>Contoh Link :</b> <br>
-        ➥ https://www.tiktok.com/@username
+        ➥ https://www.tiktok.com/@username <br>
+        ➥ Pastikan akun tidak private
         <hr>
         <b> Detail :</b> <br>
         ➥ Proses Cepat <br>
