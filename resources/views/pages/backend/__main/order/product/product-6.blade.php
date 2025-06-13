@@ -43,7 +43,7 @@
         <form method="POST" id="exilednoname-form" action="{{ URL::current() }}/../" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input class="form-control" name="id_user" type="hidden" value="{{ Auth::User()->id }}">
-          <input class="form-control" name="id_product" type="hidden" value="5">
+          <input class="form-control" name="id_product" type="hidden" value="6">
 
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Link </label>
