@@ -58,7 +58,7 @@ class WalletController extends Controller {
       ['balance' => 'required|numeric|min:10|max:100000'],
       [
         'balance.min'    => 'Minimal Top Up Rp 1.000',
-        'balance.min'    => 'Maksimal Top Up Rp 100.000',
+        'balance.max'    => 'Maksimal Top Up Rp 100.000',
       ],
     );
     $userId = Auth::id();
