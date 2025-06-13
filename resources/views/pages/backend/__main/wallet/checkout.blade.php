@@ -2,10 +2,8 @@
 @section('title', 'Checkout')
 
 @push('head')
-<script type="text/javascript"
-  src="https://app.sandbox.midtrans.com/snap/snap.js"
-  data-client-key="{{ config('midtrans.client_key') }}"></script>
-  @endpush
+<script type="text/javascript" src="{{ config('midtrans.snap_url') }}" data-client-key="{{ config('midtrans.client_key') }}"></script>
+@endpush
 
 @section('content')
 <div class="row">
