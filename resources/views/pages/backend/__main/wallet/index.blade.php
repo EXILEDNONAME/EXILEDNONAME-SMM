@@ -3,8 +3,6 @@
 
 @push('box')
 <div class="row">
-  <div class="col-xl-3 col-sm-3">
-  </div>
   <div class="col-xl-6 col-sm-6">
     <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url({{ env('APP_URL') }}/assets/backend/media/svg/shapes/abstract-4.svg)">
       <div class="card-body">
@@ -24,14 +22,12 @@
         <hr>
 
         <b> DESKRIPSI </b>
-        <p>
           <br>
           ♦ Minimal Deposit ≈ Rp 1.000 <br>
           ♦ Masukkan Jumlah Deposit => <br>
           ♦ Periksa kembali dan Tekan Tombol Submit apabila telah sesuai. <br>
           <hr>
           <b> Saldo akan otomatis masuk Dalam Hitungan Detik. </b>
-        </p>
 
         <form action="{{ URL::Current() }}/checkout" method="POST">
           @csrf
@@ -49,7 +45,7 @@
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-sm-3">
+  <div class="col-xl-6 col-sm-6">
   </div>
 </div>
 @endpush
