@@ -56,14 +56,12 @@
 
 @section('table-header')
 <th width="1"> Status </th>
-<th> Date </th>
-<th width="1"> Time </th>
+<th> Transaction Date </th>
 <th width="1"> Balance </th>
 @endsection
 
 @section('table-body')
 { data: 'status', 'className': 'align-middle text-nowrap text-center' },
 { data: 'date', 'className': 'align-middle text-nowrap' },
-{ data: 'time', 'className': 'align-middle text-nowrap text-center' },
 { data: 'balance', 'className': 'align-middle text-nowrap text-right' },
 @endsection

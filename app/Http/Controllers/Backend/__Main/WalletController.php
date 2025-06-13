@@ -36,8 +36,7 @@ class WalletController extends Controller {
       return DataTables::of(WalletTransaction::where('id_user', Auth::User()->id)->where('status', 'Paid')->orderby('created_at', 'desc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
-      ->editColumn('date', function ($order) { return empty($order->created_at) ? NULL : \Carbon\Carbon::parse($order->created_at)->format('d F Y'); })
-      ->editColumn('time', function ($order) { return empty($order->created_at) ? NULL : \Carbon\Carbon::parse($order->created_at)->format('H:i'); })
+      ->editColumn('date', function ($order) { return empty($order->created_at) ? NULL : \Carbon\Carbon::parse($order->created_at)->format('d F Y, H:i'); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
       ->editColumn('status', function ($order) {
         if($order->status == 'Unpaid') { return '<span class="label label-danger label-inline mr-2"> Gagal </span>'; }
