@@ -127,7 +127,7 @@
                         Remember me
                       </label>
                     </div>
-                    <a href="/login" class="text-white font-weight-bold"> Sudah Punya Akun? ?</a>
+                    <a href="/login" class="text-white font-weight-bold"> Sudah Punya Akun? Klik Disini </a>
                   </div>
                   <div class="form-group text-center mt-10">
                     <button type="submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3"> Register </button>
