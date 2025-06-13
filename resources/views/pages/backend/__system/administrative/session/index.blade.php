@@ -104,7 +104,7 @@ var table = $('#exilednoname_table').DataTable({
 
   ],
   order: [
-    [0, 'asc']
+    [5, 'asc']
   ]
 });
 </script>
