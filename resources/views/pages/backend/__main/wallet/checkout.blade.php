@@ -53,16 +53,13 @@
         window.location.href = '{{ $url }}';
       },
       onPending: function(result){
-        /* You may add your own implementation here */
-        alert("wating your payment!"); console.log(result);
+        // alert("wating your payment!"); console.log(result);
       },
       onError: function(result){
-        /* You may add your own implementation here */
-        alert("payment failed!"); console.log(result);
+        // alert("payment failed!"); console.log(result);
       },
       onClose: function(){
-        /* You may add your own implementation here */
-        alert('you closed the popup without finishing the payment');
+        // alert('you closed the popup without finishing the payment');
       }
     })
     // customer will be redirected after completing payment pop-up
