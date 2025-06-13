@@ -54,7 +54,7 @@ class WalletController extends Controller {
   }
 
   public function checkout(Request $request) {
-    $request->validate(['balance' => 'required|numeric|min:1000|max:100000']);
+    $request->validate(['balance' => 'required|numeric|min:10|max:100000']);
     $userId = Auth::id();
     $url = $this->url;
     $number = rand();
