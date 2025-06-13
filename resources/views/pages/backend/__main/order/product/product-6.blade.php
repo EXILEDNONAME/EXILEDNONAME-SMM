@@ -1,5 +1,5 @@
 @extends('layouts.backend.default')
-@section('title', 'Product 5')
+@section('title', 'Product 6')
 
 @section('content')
 <div class="row">
@@ -12,7 +12,7 @@
         <hr>
 
         <b>Contoh Link :</b> <br>
-        ➥ https://www.tiktok.com/@username <br>
+        ➥ https://www.instagram.com/p/xxx <br>
         ➥ Pastikan akun tidak private
         <hr>
         <b> Detail :</b> <br>
