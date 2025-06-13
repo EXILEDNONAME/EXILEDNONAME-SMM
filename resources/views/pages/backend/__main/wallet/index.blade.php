@@ -29,7 +29,7 @@
           ♦ Minimal Deposit ≈ Rp 1.000 <br>
           ♦ Masukkan Jumlah Deposit => <br>
           ♦ Periksa kembali dan Tekan Tombol Submit apabila telah sesuai. <br>
-          ――― <br>
+          <hr>
           <b> Saldo akan otomatis masuk Dalam Hitungan Detik. </b>
         </p>
 
@@ -55,9 +55,15 @@
 @endpush
 
 @section('table-header')
-<th> ID User </th>
+<th width="1"> Status </th>
+<th> Date </th>
+<th width="1"> Time </th>
+<th width="1"> Balance </th>
 @endsection
 
 @section('table-body')
-{ data: 'id_user', 'className': 'align-middle text-nowrap' },
+{ data: 'status', 'className': 'align-middle text-nowrap text-center' },
+{ data: 'date', 'className': 'align-middle text-nowrap' },
+{ data: 'time', 'className': 'align-middle text-nowrap text-center' },
+{ data: 'balance', 'className': 'align-middle text-nowrap text-right' },
 @endsection

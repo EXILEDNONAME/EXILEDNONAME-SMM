@@ -29,15 +29,9 @@
 
         <hr>
 
-        <b> DESKRIPSI </b>
-        <p>
-          <br>
-          ♦ Minimal Deposit ≈ Rp 1.000 <br>
-          ♦ Masukkan Jumlah Deposit => <br>
-          ♦ Periksa kembali dan Tekan Tombol Submit apabila telah sesuai. <br>
-          ――― <br>
-          <b> Saldo akan otomatis masuk Dalam Hitungan Detik. </b>
-        </p>
+        <b> Order ID : {{ $database->id_order }} </b><br>
+        <b> Anda akan mengisi saldo : Rp {{ number_format($database->balance, 2, ",", ".") }} </b>
+        <hr>
         <button id="pay-button" class="btn btn-info btn-lg btn-block"> Bayar </button>
 
       </div>

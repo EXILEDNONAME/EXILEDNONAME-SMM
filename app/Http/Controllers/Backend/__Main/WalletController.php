@@ -33,13 +33,22 @@ class WalletController extends Controller {
   public function index() {
     $model = $this->model;
     if (request()->ajax()) {
-      return DataTables::of($this->data)
+      return DataTables::of(WalletTransaction::where('id_user', Auth::User()->id)->where('status', 'Paid')->orderby('created_at', 'desc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
+      ->editColumn('date', function ($order) { return empty($order->created_at) ? NULL : \Carbon\Carbon::parse($order->created_at)->format('d F Y'); })
+      ->editColumn('time', function ($order) { return empty($order->created_at) ? NULL : \Carbon\Carbon::parse($order->created_at)->format('H:i'); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
-      ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
+      ->editColumn('status', function ($order) {
+        if($order->status == 'Unpaid') { return '<span class="label label-danger label-inline mr-2"> Gagal </span>'; }
+        if($order->status == 'Paid') { return '<span class="label label-success label-inline mr-2"> Selesai </span>'; }
+      })
+      ->editColumn('balance', function ($order) {
+        if($order->status == 'Unpaid') { return '<span class="text-danger"> Rp ' . number_format($order->balance, 2, ",", ".") . '</span>'; }
+        if($order->status == 'Paid') { return '<span class="text-success"> + Rp ' . number_format($order->balance, 2, ",", ".") . '</span>'; }
+      })
       ->editColumn('rate', function ($order) { return "Rp " . number_format($order->price * 1000, 2, ",", "."); })
-      ->rawColumns(['description'])
+      ->rawColumns(['description', 'balance', 'status'])
       ->addIndexColumn()->make(true);
     }
     return view($this->path . 'index', compact('model'));
@@ -56,6 +65,7 @@ class WalletController extends Controller {
       'status' => 'Unpaid',
     ]);
     $order = WalletTransaction::create($request->all());
+    $database = WalletTransaction::orderby('created_at', 'desc')->first();
 
 
     \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -78,7 +88,7 @@ class WalletController extends Controller {
 
 
     $snapToken = \Midtrans\Snap::getSnapToken($params);
-    return view($this->path . 'checkout', compact('snapToken', 'order', 'url', 'userId'));
+    return view($this->path . 'checkout', compact('snapToken', 'order', 'url', 'userId', 'database'));
   }
 
   public function callback(Request $request) {

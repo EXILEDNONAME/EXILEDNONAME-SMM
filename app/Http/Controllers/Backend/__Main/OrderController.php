@@ -72,6 +72,7 @@ class OrderController extends Controller implements HasMiddleware {
     if ($id == 3) { return view($this->path . 'product.product-3', compact('product', 'url')); }
     if ($id == 4) { return view($this->path . 'product.product-4', compact('product', 'url')); }
     if ($id == 5) { return view($this->path . 'product.product-5', compact('product', 'url')); }
+    if ($id == 6) { return view($this->path . 'product.product-6', compact('product', 'url')); }
   }
 
   /**
@@ -87,14 +88,24 @@ class OrderController extends Controller implements HasMiddleware {
     } else { $getbalance = 0; }
 
     if ($getbalance < $request->get('price')){
-      return redirect()->back()->with('error', 'Your Balance is Insufficient');
+      return redirect()->back()->with('error', 'Saldo anda tidak mencukupi.');
     }
     else {
-      if($request->id_product == 1) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
+      if($request->id_product == 1) {
+        $request->validate(['quantity' => 'required|numeric|min:100|max:10000']);
+        $transaction = $this->model::where(['id_user' => Auth::User()->id, 'id_product' => 1])->orderby('created_at', 'desc')->first();
+        $now = \Carbon\Carbon::now()->timestamp;
+        if (!empty($transaction->status) && $transaction->status < 3) {
+          if ($now - strtotime($transaction->created_at) < 300) {
+            return redirect()->back()->with('error', 'Harap menunggu orderan sebelumnya sampai selesai ±5 menit.');
+          }
+        }
+      }
       if($request->id_product == 2) { $request->validate(['quantity' => 'required|numeric|min:100|max:10000']); }
       if($request->id_product == 3) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
       if($request->id_product == 4) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
       if($request->id_product == 5) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
+      if($request->id_product == 6) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
 
       // AUTOMATION
       $data = Product::where('id', $request->id_product)->first();

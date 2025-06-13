@@ -23,7 +23,7 @@ class Wallet extends Model {
     return LogOptions::defaults()->logOnly(['*']);
   }
 
-  public function users(){
+  public function id_users(){
     return $this->belongsTo(User::class, 'id_user');
   }
 
