@@ -54,7 +54,13 @@ class WalletController extends Controller {
   }
 
   public function checkout(Request $request) {
-    $request->validate(['balance' => 'required|numeric|min:10|max:100000']);
+    $request->validate(
+      ['balance' => 'required|numeric|min:10|max:100000'],
+      [
+        'balance.min'    => 'Minimal Top Up Rp 1.000',
+        'balance.min'    => 'Maksimal Top Up Rp 100.000',
+      ],
+    );
     $userId = Auth::id();
     $url = $this->url;
     $number = rand();
@@ -78,7 +84,7 @@ class WalletController extends Controller {
         'gross_amount' => $request->balance,
       ),
       'customer_details' => array(
-      'id' => Auth::user()->id,
+        'id' => Auth::user()->id,
         'firts_name' => Auth::user()->name,
       ),
       "custom_field1" => Auth::id(),
