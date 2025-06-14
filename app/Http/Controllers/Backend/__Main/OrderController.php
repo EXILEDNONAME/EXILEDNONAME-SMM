@@ -101,7 +101,7 @@ class OrderController extends Controller implements HasMiddleware {
         $request->validate(['quantity' => 'required|numeric|min:100|max:10000']);
         $transaction = $this->model::where(['id_user' => Auth::User()->id, 'id_product' => 1])->orderby('created_at', 'desc')->first();
         $now = \Carbon\Carbon::now()->timestamp;
-        if (!empty($transaction->status) && $transaction->status < 3) {
+        if (!empty($transaction->status) && $transaction->status <= 3) {
           if ($now - strtotime($transaction->created_at) < 300) {
             $set = $now - strtotime($transaction->created_at);
             $time = (300 - $set) / 60;
@@ -132,7 +132,7 @@ class OrderController extends Controller implements HasMiddleware {
         $request->validate(['quantity' => 'required|numeric|min:10|max:10000']);
         $transaction = $this->model::where(['id_user' => Auth::User()->id, 'id_product' => 10])->orderby('created_at', 'desc')->first();
         $now = \Carbon\Carbon::now()->timestamp;
-        if (!empty($transaction->status) && $transaction->status < 3) {
+        if (!empty($transaction->status) && $transaction->status <= 3) {
           if ($now - strtotime($transaction->created_at) < 900) {
             $set = $now - strtotime($transaction->created_at);
             $time = (900 - $set) / 60;
