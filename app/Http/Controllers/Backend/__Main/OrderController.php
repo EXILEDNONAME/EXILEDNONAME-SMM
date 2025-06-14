@@ -52,7 +52,7 @@ class OrderController extends Controller implements HasMiddleware {
       return DataTables::of(Product::where('active', 1)->orderby('name', 'asc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
-      ->editColumn('price', function ($order) { return "Rp " . $order->price; })
+      ->editColumn('show', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
       ->rawColumns(['description', 'show'])
       ->addIndexColumn()->make(true);
