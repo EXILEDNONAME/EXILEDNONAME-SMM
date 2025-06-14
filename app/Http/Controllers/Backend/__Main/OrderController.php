@@ -47,7 +47,7 @@ class OrderController extends Controller implements HasMiddleware {
     $model = $this->model::take(3)->where('id_user', Auth::user()->id)->orderby('created_at', 'desc')->get();
     $url = $this->url;
     if (request()->ajax()) {
-      return DataTables::of(Product::where('active', 1)->get())
+      return DataTables::of(Product::where('active', 1)->orderby('created_at', 'asc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
@@ -74,6 +74,7 @@ class OrderController extends Controller implements HasMiddleware {
     if ($id == 5) { return view($this->path . 'product.product-5', compact('product', 'url')); }
     if ($id == 6) { return view($this->path . 'product.product-6', compact('product', 'url')); }
     if ($id == 7) { return view($this->path . 'product.product-7', compact('product', 'url')); }
+    if ($id == 8) { return view($this->path . 'product.product-8', compact('product', 'url')); }
   }
 
   /**
@@ -108,6 +109,7 @@ class OrderController extends Controller implements HasMiddleware {
       if($request->id_product == 5) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
       if($request->id_product == 6) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
       if($request->id_product == 7) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
+      if($request->id_product == 8) { $request->validate(['quantity' => 'required|numeric|min:10|max:10000']); }
 
       // AUTOMATION
       $data = Product::where('id', $request->id_product)->first();
