@@ -17,8 +17,6 @@
         <hr>
         <b> Detail :</b> <br>
         ● Start: 0-1 Jam <br>
-        ● Speed: 25K per Day <br>
-        ● Quality: Best High Quality (Random) <br>
       </div>
     </div>
   </div>

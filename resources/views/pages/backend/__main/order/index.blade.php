@@ -73,7 +73,7 @@
 {
   data: 'show', orderable: false, searchable: false, 'className': 'align-middle text-center', 'width': '1',
   render: function(data, type, row, meta) {
-    return '<a href="{{ URL::current() }}/' + row.id + '"><button type="button"  class="btn btn-sm btn-outline-dark" data-id=""> Order </button></a>'
+    return '<a href="{{ URL::current() }}/' + row.id + '"><span class="label label-dark label-inline mr-2 align-middle"><i class="icon-xs fas fa-cart-plus mr-2"> </i> Order </span></a>'
   }
 },
 { data: 'name', 'className': 'align-middle text-nowrap' },
