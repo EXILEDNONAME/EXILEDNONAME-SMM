@@ -11,6 +11,47 @@
 <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}/assets/frontend/css/font-awesome.css">
 <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/frontend/css/templatemo-softy-pinko.css">
 <link rel="shortcut icon" href="{{ env('APP_URL') }}/assets/frontend/logo.png"/>
+<style>
+  .whatsapp-button{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+    background-color: #25d366;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 0px 25px -6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 25px -6px rgba(0,0,0,1);
+    box-shadow: 0px 0px 25px -6px rgba(0,0,0,1);
+    animation: effect 5s infinite ease-in;
+}
+
+@keyframes effect {
+    20%, 100% {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    0%, 10%{
+        width: 55px;
+        height: 55px;
+        font-size: 35px;
+    }
+    5%{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -218,11 +259,7 @@
 <script src="{{ env('APP_URL') }}/assets/frontend/js/imgfix.min.js"></script>
 <script src="{{ env('APP_URL') }}/assets/frontend/js/custom.js"></script>
 
-<div style="position:fixed;right:20px;bottom:20px;">
-<a href="https://api.whatsapp.com/send?phone=+628123456789&text=Halo">
-<button style="background:#32C03C;vertical-align:center;height:36px;border-radius:5px">
-<img src="https://web.whatsapp.com/img/favicon/1x/favicon.png"> Whatsapp Kami</button></a>
-</div>
+<a target="_blank" href="https://api.whatsapp.com/send?phone=6289672705020&text=Saya klik dari https://exilednoname.site, Mau tanya ...." class="whatsapp-button"><img src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" height="50"></a>
 
 </body>
 </html>
