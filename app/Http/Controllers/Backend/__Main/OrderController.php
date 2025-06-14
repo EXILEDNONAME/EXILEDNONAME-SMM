@@ -104,7 +104,7 @@ class OrderController extends Controller implements HasMiddleware {
           if ($now - strtotime($transaction->created_at) < 300) {
             $set = $now - strtotime($transaction->created_at);
             $time = (300 - $set) / 60;
-            return redirect()->back()->with('error', 'Harap menunggu orderan sebelumnya sampai selesai ±' . number_format($time, 0, ",", ".") . ' menit.');
+            return redirect()->back()->with('error', 'Harap menunggu ±' . number_format($time, 0, ",", ".") . ' menit untuk bisa order produk ini lagi.');
           }
         }
       }
