@@ -55,7 +55,7 @@ class TransactionController extends Controller implements HasMiddleware {
         else { return ''; }
       })
       ->editColumn('target', function ($order) { return '<a href="' . $order->target . '" target="_blank"><i class="text-primary icon-md fas fa-link"></i></a>'; })
-      ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
+      ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 0, ",", "."); })
       ->rawColumns(['description', 'status', 'target'])
       ->addIndexColumn()->make(true);
     }
