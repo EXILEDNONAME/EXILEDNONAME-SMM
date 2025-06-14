@@ -17,8 +17,6 @@
         <hr>
         <b> Detail :</b> <br>
         ➥ Proses Lambat <br>
-        ➥ Dilarang Spam Order (Account Banned) <br>
-        ➥ Gunakan Dengan Bijak <br>
       </div>
     </div>
   </div>
