@@ -47,7 +47,7 @@ class OrderController extends Controller implements HasMiddleware {
     $model = $this->model::take(3)->where('id_user', Auth::user()->id)->orderby('created_at', 'desc')->get();
     $url = $this->url;
     if (request()->ajax()) {
-      return DataTables::of(Product::where('active', 1)->orderby('created_at', 'asc')->get())
+      return DataTables::of(Product::where('active', 1)->orderby('name', 'asc')->get())
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
