@@ -63,5 +63,5 @@
   }
 },
 { data: 'name', 'className': 'align-middle text-nowrap' },
-{ data: 'price', 'className': 'align-middle text-nowrap', 'width': '1' },
+{ data: 'price', 'className': 'align-middle text-nowrap text-right', 'width': '1' },
 @endsection
