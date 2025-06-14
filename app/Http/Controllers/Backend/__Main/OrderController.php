@@ -36,11 +36,13 @@ class OrderController extends Controller implements HasMiddleware {
   **/
 
   public function index() {
+
+    // AUTO UPDATE
     $now = \Carbon\Carbon::now()->timestamp;
     $item = $this->model::get();
     foreach($item as $item) {
-      if ($now - strtotime($item->created_at) > 300) { $this->model::where('id', $item->id)->update(['status' => 3]); }
-      else if ($now - strtotime($item->created_at) > 60) { $this->model::where('id', $item->id)->update(['status' => 2]); }
+      if ($now - strtotime($item->created_at) > 300) { $this->model::where(['id' => $item->id, 'id_product' != '1', , 'id_product' != '9'])->update(['status' => 3]); }
+      else if ($now - strtotime($item->created_at) > 60) { $this->model::where(['id' => $item->id, 'id_product' != '1', , 'id_product' != '9'])->update(['status' => 2]); }
       else { $this->model::where('id', $item->id)->update(['status' => 1]); }
     }
 
