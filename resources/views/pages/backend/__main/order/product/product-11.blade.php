@@ -12,7 +12,7 @@
         <hr>
 
         <b>Contoh Link :</b> <br>
-        ➥ https://www.tiktok.com/@username <br>
+        ➥ https://vt.tiktok.com/xxx <br>
         ➥ Pastikan akun tidak private
         <hr>
         <b> Detail :</b> <br>
@@ -58,7 +58,7 @@
             <div class="col-lg-9">
               {{ Html::number('quantity', (isset($data->quantity) ? $data->quantity : ''))->class([ $errors->has('quantity') ? 'form-control is-invalid' : 'form-control'])->id('quantity') }}
               @error('quantity') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
-              <span class="form-text text-muted"> Quantity 10 - 10.000 </span>
+              <span class="form-text text-muted"> Quantity 50.000 - 100.000 </span>
             </div>
           </div>
 

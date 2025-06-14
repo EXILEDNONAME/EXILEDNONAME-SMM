@@ -65,7 +65,7 @@
           <div class="form-group row">
             <label class="col-lg-3 col-form-label"> Price </label>
             <div class="col-lg-9">
-              {{ Html::text('price', (isset($data->price) ? $data->price : ''))->class([ $errors->has('price') ? 'form-control form-control-solid is-invalid' : 'form-control form-control-solid'])->required()->id('result') }}
+              {{ Html::text('price', (isset($data->price) ? $data->price : '0.00'))->class([ $errors->has('price') ? 'form-control form-control-solid is-invalid' : 'form-control form-control-solid'])->required()->id('result') }}
               @error('price') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
             </div>
           </div>
