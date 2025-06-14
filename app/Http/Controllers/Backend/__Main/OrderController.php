@@ -78,6 +78,7 @@ class OrderController extends Controller implements HasMiddleware {
     if ($id == 7) { return view($this->path . 'product.product-7', compact('product', 'url')); }
     if ($id == 8) { return view($this->path . 'product.product-8', compact('product', 'url')); }
     if ($id == 9) { return view($this->path . 'product.product-9', compact('product', 'url')); }
+    if ($id == 10) { return view($this->path . 'product.product-10', compact('product', 'url')); }
   }
 
   /**
@@ -118,6 +119,18 @@ class OrderController extends Controller implements HasMiddleware {
       if($request->id_product == 9) {
         $request->validate(['quantity' => 'required|numeric|min:10|max:10000']);
         $transaction = $this->model::where(['id_user' => Auth::User()->id, 'id_product' => 9])->orderby('created_at', 'desc')->first();
+        $now = \Carbon\Carbon::now()->timestamp;
+        if (!empty($transaction->status) && $transaction->status < 3) {
+          if ($now - strtotime($transaction->created_at) < 900) {
+            $set = $now - strtotime($transaction->created_at);
+            $time = (900 - $set) / 60;
+            return redirect()->back()->with('error', 'Harap menunggu ±' . number_format($time, 0, ",", ".") . ' menit untuk bisa order produk ini lagi.');
+          }
+        }
+      }
+      if($request->id_product == 10) {
+        $request->validate(['quantity' => 'required|numeric|min:10|max:10000']);
+        $transaction = $this->model::where(['id_user' => Auth::User()->id, 'id_product' => 10])->orderby('created_at', 'desc')->first();
         $now = \Carbon\Carbon::now()->timestamp;
         if (!empty($transaction->status) && $transaction->status < 3) {
           if ($now - strtotime($transaction->created_at) < 900) {
