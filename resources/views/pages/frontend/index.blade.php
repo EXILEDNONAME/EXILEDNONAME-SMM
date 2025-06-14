@@ -14,6 +14,8 @@
 </head>
 <body>
 
+
+
   <div id="preloader">
     <div class="jumper">
       <div></div>
@@ -52,7 +54,7 @@
             <h1>Dapatkan lebih banyak <strong>Followers</strong>,
               <strong>Likes</strong>, dan <strong>Views</strong>
               dengan harga terjangkau bersama kami
-              <br>
+              <br><br>
               <a href="/register" class="main-button-slider"> DAFTAR SEKARANG </a>
             </div>
           </div>
@@ -125,18 +127,17 @@
 
         <div class="row">
           <!-- ***** Pricing Item Start ***** -->
-          <div class="col-lg-3 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+          <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
             <div class="pricing-item">
               <div class="pricing-header">
-                <h3 class="pricing-title">Tiktok Views Free </h3>
+                <h3 class="pricing-title">Tiktok Views </h3>
               </div>
               <div class="pricing-body">
                 <div class="price-wrapper">
-                  <span class="price">Rp 0 /</span>
-                  <span class="period">order</span>
+                  <span class="price">Rp 0 </span>
                 </div>
                 <ul class="list">
-                  <li class="active"> Gratis </li>
+                  <li class="active"> Dapatkan lebih banyak Tiktok Views </li>
                   <li class="active"> Syarat dan Ketentuan Berlaku </li>
 
                 </ul>
@@ -147,19 +148,18 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+          <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
             <div class="pricing-item">
               <div class="pricing-header">
-                <h3 class="pricing-title">Tiktok Views</h3>
+                <h3 class="pricing-title"> Tiktok Likes </h3>
               </div>
               <div class="pricing-body">
                 <div class="price-wrapper">
-                  <span class="price">Rp 1.000 /</span>
-                  <span class="period">+1000 order</span>
+                  <span class="price">Rp 0 </span>
                 </div>
                 <ul class="list">
-                  <li class="active"> Dapatkan lebih banyak Views</li>
-                  <li class="active"> Proses Cepat</li>
+                  <li class="active"> Dapatkan lebih banyak Tiktok Likes </li>
+                  <li class="active"> Syarat dan Ketentuan Berlaku </li>
                 </ul>
               </div>
               <div class="pricing-footer">
@@ -170,42 +170,19 @@
           <!-- ***** Pricing Item End ***** -->
 
           <!-- ***** Pricing Item Start ***** -->
-          <div class="col-lg-3 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+          <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
             <div class="pricing-item active">
               <div class="pricing-header">
-                <h3 class="pricing-title">Tiktok Likes</h3>
+                <h3 class="pricing-title"> Instagram Likes</h3>
               </div>
               <div class="pricing-body">
                 <div class="price-wrapper">
-                  <span class="price">Rp 5.000 /</span>
-                  <span class="period">+1000 order</span>
+                  <span class="price">Rp 0</span>
                 </div>
                 <ul class="list">
-                  <li class="active"> Dapatkan lebih banyak Likes </li>
-                  <li class="active"> Proses Cepat </li>
-                </ul>
-              </div>
-              <div class="pricing-footer">
-                <a href="/register" class="main-button"> BELI </a>
-              </div>
-            </div>
-          </div>
-          <!-- ***** Pricing Item End ***** -->
+                  <li class="active"> Dapatkan lebih banyak Instagram Likes </li>
+                  <li class="active"> Syarat dan Ketentuan Berlaku </li>
 
-          <!-- ***** Pricing Item Start ***** -->
-          <div class="col-lg-3 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
-            <div class="pricing-item">
-              <div class="pricing-header">
-                <h3 class="pricing-title">Tiktok Followers</h3>
-              </div>
-              <div class="pricing-body">
-                <div class="price-wrapper">
-                  <span class="price">Rp 60.000 /</span>
-                  <span class="period">+1000 order</span>
-                </div>
-                <ul class="list">
-                  <li class="active"> Dapatkan lebih banyak Follower </li>
-                  <li class="active"> Proses Cepat </li>
                 </ul>
               </div>
               <div class="pricing-footer">
@@ -213,6 +190,8 @@
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </section>
@@ -228,6 +207,8 @@
 </div>
 </footer>
 
+
+
 <script src="{{ env('APP_URL') }}/assets/frontend/js/jquery-2.1.0.min.js"></script>
 <script src="{{ env('APP_URL') }}/assets/frontend/js/popper.js"></script>
 <script src="{{ env('APP_URL') }}/assets/frontend/js/bootstrap.min.js"></script>
@@ -236,6 +217,12 @@
 <script src="{{ env('APP_URL') }}/assets/frontend/js/jquery.counterup.min.js"></script>
 <script src="{{ env('APP_URL') }}/assets/frontend/js/imgfix.min.js"></script>
 <script src="{{ env('APP_URL') }}/assets/frontend/js/custom.js"></script>
+
+<div style="position:fixed;right:20px;bottom:20px;">
+<a href="https://api.whatsapp.com/send?phone=+628123456789&text=Halo">
+<button style="background:#32C03C;vertical-align:center;height:36px;border-radius:5px">
+<img src="https://web.whatsapp.com/img/favicon/1x/favicon.png"> Whatsapp Kami</button></a>
+</div>
 
 </body>
 </html>
