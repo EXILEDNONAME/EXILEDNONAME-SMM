@@ -50,18 +50,18 @@
 @endpush
 
 @section('table-header')
-<th> </th>
 <th> Name </th>
 <th> Price </th>
+<th> </th>
 @endsection
 
 @section('table-body')
+{ data: 'name', 'className': 'align-middle text-nowrap' },
+{ data: 'price', 'className': 'align-middle text-nowrap' },
 {
   data: 'show', orderable: false, searchable: false, 'className': 'align-middle text-center', 'width': '1',
   render: function(data, type, row, meta) {
     return '<a href="{{ URL::current() }}/' + row.id + '"><button type="button"  class="btn btn-sm btn-outline-dark" data-id=""> Order </button></a>'
   }
 }
-{ data: 'name', 'className': 'align-middle text-nowrap' },
-{ data: 'price', 'className': 'align-middle text-nowrap' },
 @endsection
