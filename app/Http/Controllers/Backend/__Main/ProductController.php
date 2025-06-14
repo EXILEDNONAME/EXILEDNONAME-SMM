@@ -16,7 +16,7 @@ class ProductController extends Controller implements HasMiddleware {
     $this->model = 'App\Models\Backend\__Main\Product';
     $this->path = 'pages.backend.__main.product.';
     $this->url = '/dashboard/products';
-    $this->data = $this->model::where('active', 1)->get();
+    $this->data = $this->model::where('active', 1)->orderby('name', 'asc')->get();
   }
 
   use DefaultController;
