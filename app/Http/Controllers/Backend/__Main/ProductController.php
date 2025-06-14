@@ -35,8 +35,8 @@ class ProductController extends Controller implements HasMiddleware {
       ->editColumn('date_start', function ($order) { return empty($order->date_start) ? NULL : \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function ($order) { return empty($order->date_end) ? NULL : \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('description', function ($order) { return nl2br(e($order->description)); })
-      ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 0, ",", "."); })
-      ->editColumn('rate', function ($order) { return "Rp " . number_format($order->price * 1000, 0, ",", "."); })
+      ->editColumn('price', function ($order) { return "Rp " . number_format($order->price, 2, ",", "."); })
+      ->editColumn('rate', function ($order) { return "Rp " . number_format($order->price * 1000, 2, ",", "."); })
       ->rawColumns(['description'])
       ->addIndexColumn()->make(true);
     }
