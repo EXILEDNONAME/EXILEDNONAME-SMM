@@ -33,7 +33,7 @@
             <td class="text-nowrap"> #{{ implode('', str_split(sprintf('%05d',  $transaction->id), 3)) }}</td>
             <td class="text-nowrap"> {{ $transaction->id_products->name }}</td>
             <td class="text-nowrap text-center"> {{ $transaction->quantity }}</td>
-            <td class="text-nowrap text-right"> Rp {{ number_format($transaction->price, 2, ",", ".") }} </td>
+            <td class="text-nowrap text-right"> Rp {{ $transaction->price }} </td>
             <td class="text-nowrap text-center"><a href="{{ $transaction->target }}" target="_blank"><i class="text-primary icon-md fas fa-link"></i></a></td>
           </tr>
           @endforeach
