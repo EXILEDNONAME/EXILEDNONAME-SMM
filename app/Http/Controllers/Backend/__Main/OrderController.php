@@ -102,7 +102,8 @@ class OrderController extends Controller implements HasMiddleware {
         $now = \Carbon\Carbon::now()->timestamp;
         if (!empty($transaction->status) && $transaction->status < 3) {
           if ($now - strtotime($transaction->created_at) < 300) {
-            return redirect()->back()->with('error', 'Harap menunggu orderan sebelumnya sampai selesai ±5 menit.');
+            $time = (300 - $now - strtotime($transaction->created_at)) * 60;
+            return redirect()->back()->with('error', 'Harap menunggu orderan sebelumnya sampai selesai ±' . $time . ' menit.');
           }
         }
       }
