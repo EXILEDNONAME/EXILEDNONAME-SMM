@@ -3,8 +3,8 @@
     <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
       <div id="kt_header_menu" class="header-menu header-menu-mobile  header-menu-layout-default">
         <ul class="menu-nav">
-          <li class="menu-item  menu-item-submenu menu-item-rel menu-item-active"  data-menu-toggle="click" aria-haspopup="true"><a  href="javascript:;" class="menu-link menu-toggle">
-            <span class="menu-text">Pages</span><i class="menu-arrow"></i></a>
+          <li class="menu-item  menu-item-submenu menu-item-rel menu-item-active"  data-menu-toggle="click" aria-haspopup="true">
+            <a  href="javascript:;" class="menu-link menu-toggle"><i class="menu-arrow fas fa-cart plus m-2"></i><span class="menu-text"> Order </span></a>
           </li>
         </ul>
       </div>
